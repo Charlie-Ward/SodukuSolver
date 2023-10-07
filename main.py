@@ -47,7 +47,23 @@ unavailable_numbers = random.sample(unavailable_numbers, len(unavailable_numbers
 for i in range(len(unavailable_numbers)):
     board[i+2].append(unavailable_numbers[i])
 
-print(board[0])
-print(board[1])
-print(board[2])
-print(board[3])
+# C,3
+unavailable_numbers = [1,2,4]
+temp = [1,3]
+numbers_temp = []
+# temp = [board[0][2],board[1][2],board[2][0],board[2][1]]
+print(temp)
+passed = True
+for i in range(len(temp)):
+    for r in range(len(unavailable_numbers)):
+        if unavailable_numbers[r] == temp[i]:
+            passed = False
+    if passed == True:
+        numbers_temp.append(temp[i])
+    passed = False
+print(numbers_temp)
+
+# print(board[0])
+# print(board[1])
+# print(board[2])
+# print(board[3])
